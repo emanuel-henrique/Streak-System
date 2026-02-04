@@ -1,16 +1,73 @@
-# React + Vite
+# 🔥 Streak Calendar
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Um sistema moderno de rastreamento de hábitos com calendário interativo, construído com React e design minimalista. Acompanhe suas sequências diárias e mantenha-se motivado! 
 
-Currently, two official plugins are available:
+![Streak Calendar Preview](./Screenshot.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Características
 
-## React Compiler
+- 🔥 **Sistema de Streaks**: Contador automático de dias consecutivos
+- 📅 **Calendário Não-Clicável**: Interface controlada apenas por código para garantir integridade dos dados
+- 🎨 **UI Moderna**: Componentes do shadcn/ui com Tailwind CSS
+- 🌙 **Tema Escuro**: Interface elegante e confortável para os olhos
+- 💾 **Persistência Local**: Dados salvos no Local Storage do navegador
+- 📱 **Responsivo**: Experiência perfeita em qualquer dispositivo
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Tech Stack
 
-## Expanding the ESLint configuration
+- **Framework**: [React 18](https://react.dev/)
+- **Build Tool**: [Vite](https://vitejs.dev/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Components**: [shadcn/ui](https://ui.shadcn.com/)
+- **Storage**: Local Storage API
+- **Language**: JavaScript/JSX
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Instalação e Setup
+
+### Pré-requisitos
+
+- Node.js 16+ instalado
+- npm ou yarn
+
+### Passos
+
+1. **Clone o repositório**:
+```bash
+git clone https://github.com/seu-usuario/streak-calendar.git
+cd streak-calendar
+```
+
+2. **Instale as dependências**:
+```bash
+npm install
+# ou
+yarn install
+```
+
+3. **Inicie o servidor de desenvolvimento**:
+```bash
+npm run dev
+# ou
+yarn dev
+```
+
+4. **Abra no navegador**:
+```
+http://localhost:5173
+```
+
+## 💡 Como Usar
+
+### Interface do Usuário
+
+1. **Navegação**: Use as setas laterais para navegar entre meses
+2. **Check-in Diário**: Clique no botão "Check-In" para marcar o dia atual
+3. **Visualização de Streak**: Veja sua sequência atual no topo com o ícone 🔥
+
+## 👨‍💻 Autor
+
+**Emanuel Henrique** - [GitHub](https://github.com/emanuel-henrique) | [LinkedIn](https://www.linkedin.com/in/emanuel-henrique-38b264392/)
+
+## 📝 Sobre o Projeto
+
+Projeto desenvolvido com o intuito de estudar sobre um funcionalidade, a qual será novamente utilizada em projetos posteriores.
