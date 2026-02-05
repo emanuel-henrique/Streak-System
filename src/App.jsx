@@ -3,6 +3,7 @@ import { Calendar } from "@/components/ui/calendar";
 import { ptBR } from "date-fns/locale";
 import { Button } from "@/components/ui/button";
 import { differenceInDays } from "date-fns";
+import { storage } from "./utils/storage";
 
 export default function App() {
   const [date, setDate] = useState();
@@ -11,25 +12,27 @@ export default function App() {
   function handleClick() {
     const today = new Date();
 
-    if (!localStorage.getItem("@streakCalendar:from")) {
+    const isFirstCheckIn = storage.get("from");
+
+    if (!isFirstCheckIn) {
       setDate({ from: today, to: null });
-      localStorage.setItem("@streakCalendar:from", today.getTime());
-      localStorage.setItem("@streakCalendar:streakDays", 1);
+      storage.set("from", today.getTime());
+      storage.set("streakDays", 1);
       return setStreak(1);
     }
 
-    const fromDate = new Date(+localStorage.getItem("@streakCalendar:from"));
+    const fromDate = new Date(+storage.get("from"));
     const streakDays = differenceInDays(today, fromDate) + 1;
 
     setDate((prev) => ({ ...prev, to: today }));
     setStreak(streakDays);
-    localStorage.setItem("@streakCalendar:to", today.getTime());
-    localStorage.setItem("@streakCalendar:streakDays", streakDays);
+    storage.set("to", today.getTime());
+    storage.set("streakDays", streakDays);
   }
 
   useEffect(() => {
-    const fromTimestamp = localStorage.getItem("@streakCalendar:from");
-    const toTimestamp = localStorage.getItem("@streakCalendar:to");
+    const fromTimestamp = storage.get("from");
+    const toTimestamp = storage.get("to");
 
     if (fromTimestamp) {
       const fromDate = new Date(+fromTimestamp);
